@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../App'
 
-const Photo = () => {
+const Photo = ({ farm, server, id, secret }) => {
     return (
         <li>
-            <img src={`https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`} alt="picture" />
+            <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt="picture" />
         </li>
         
     );
