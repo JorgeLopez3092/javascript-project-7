@@ -11,7 +11,7 @@ import {
 import axios from 'axios'
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
-import Gallery from './components/images/Gallery'
+import Gallery from './components/imageComponents/Gallery'
 import apiKey from './config.js';
 
 export const UserContext = React.createContext()
