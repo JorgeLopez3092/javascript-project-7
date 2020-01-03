@@ -23,7 +23,7 @@ function App() {
   const [search, setSearch] = useState('cats');
 
   useEffect(() => {
-      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a06238e1e358e0410ccc93d067fe0b7b&tags=${search}&format=json&nojsoncallback=1`)
+      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${search}&format=json&nojsoncallback=1`)
       .then(response => response.data)
       .then(data => data.photos.photo)
       .then(data => setPhotos(data))
@@ -52,7 +52,9 @@ const handleLinkClick = e => {
             onClick={e => handleSubmit(e)}
             />
           <MainNav />
-          <Gallery />
+          <Route path="/gallery">
+            <Gallery />
+          </Route>
         </div>
       </Router>
     </NavContext.Provider>
