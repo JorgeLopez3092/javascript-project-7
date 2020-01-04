@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { UserContext } from '../../App';
+import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios'
 import apiKey from '../../config.js';
@@ -18,7 +17,7 @@ const Gallery = () => {
         (async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${search}&format=json&nojsoncallback=1`)
+                const response = await axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${search}&per_page=24&format=json&nojsoncallback=1`)
                 const { data } = response;
                 const { photos } = data;
                 const { photo } = photos;
