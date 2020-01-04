@@ -8,7 +8,7 @@ const SearchForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        history.push(`/${e.target[0].value.replace(' ', '+')}`)
+        history.push(`/${e.target[0].value.replace(/ /g, '+')}`)
         // setSearch(e.target[0].value.replace(' ', '+'))
       }
 

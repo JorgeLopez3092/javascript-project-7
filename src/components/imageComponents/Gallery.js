@@ -9,12 +9,10 @@ import loadingGif from '../../Loading.gif'
 
 const Gallery = () => {
 
-    // const pics = useContext(UserContext);
-    // const results = pics.length;
-    // console.log(results);
-    const { search } = useParams('cats');
+    const { search } = useParams();
     const [photos, setPhotos] = useState([]);
     const [loading, setLoading] = useState(false);
+    const h2Results = search.replace(/\+/g, ' ');
 
     useEffect(() => {
         (async () => {
@@ -36,7 +34,7 @@ const Gallery = () => {
 
     return (
         <div className="photo-container">
-            <h2>Results</h2>
+            <h2>{h2Results}</h2>
             <ul>
             {loading && (
                 <li className="loading-gif"><img src={loadingGif} alt='Loading...' /></li>
